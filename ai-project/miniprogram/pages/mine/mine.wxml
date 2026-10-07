@@ -1,0 +1,59 @@
+<view class="page">
+  <!-- 数据概览 -->
+  <view class="stat-banner" wx:if="{{stats}}">
+    <view class="stat-item">
+      <view class="stat-num">{{stats.total}}</view>
+      <view class="stat-label">收录职位</view>
+    </view>
+    <view class="stat-item">
+      <view class="stat-num">{{stats.byCategory.central_soe}}</view>
+      <view class="stat-label">央企</view>
+    </view>
+    <view class="stat-item">
+      <view class="stat-num">{{stats.byCategory.state_owned}}</view>
+      <view class="stat-label">国企</view>
+    </view>
+    <view class="stat-item">
+      <view class="stat-num">{{stats.byCategory.civil_service}}</view>
+      <view class="stat-label">公务员</view>
+    </view>
+    <view class="stat-item">
+      <view class="stat-num">{{stats.byCategory.big_company}}</view>
+      <view class="stat-label">大厂社招</view>
+    </view>
+  </view>
+
+  <!-- 订阅关键词 -->
+  <view class="card">
+    <view class="section-title">订阅关键词</view>
+    <view class="sub-input-row">
+      <input
+        class="sub-input"
+        placeholder="如：国家电网、算法、财务"
+        value="{{newKeyword}}"
+        bindinput="onKeywordInput"
+      />
+      <view class="sub-add" bindtap="addSubscription">添加</view>
+    </view>
+    <view class="sub-list" wx:if="{{subscriptions.length}}">
+      <view class="sub-item" wx:for="{{subscriptions}}" wx:key="id">
+        <text>{{item.keyword}}</text>
+        <text class="sub-del" data-id="{{item.id}}" bindtap="removeSubscription">删除</text>
+      </view>
+    </view>
+    <view class="empty small" wx:else>暂无订阅，添加关键词每日自动匹配</view>
+  </view>
+
+  <!-- 收藏列表 -->
+  <view class="card">
+    <view class="section-title">我的收藏 ({{favorites.length}})</view>
+    <view class="fav-item" wx:for="{{favorites}}" wx:key="id" data-id="{{item.id}}" bindtap="goDetail">
+      <view class="fav-main">
+        <view class="fav-title">{{item.title}}</view>
+        <view class="fav-company">{{item.company}}</view>
+      </view>
+      <view class="fav-del" data-id="{{item.id}}" catchtap="removeFavorite">取消</view>
+    </view>
+    <view class="empty small" wx:if="{{favorites.length === 0}}">还没有收藏职位</view>
+  </view>
+</view>

@@ -1,0 +1,56 @@
+<view class="page" wx:if="{{job}}">
+  <view class="card head-card">
+    <view class="job-title">{{job.title}}</view>
+    <view class="job-company">{{job.company}}</view>
+    <view class="tags">
+      <text class="tag">{{job.categoryName}}</text>
+      <text class="tag" wx:if="{{job.sourceName}}">{{job.sourceName}}</text>
+      <text class="tag" wx:for="{{job.tags}}" wx:key="*this">{{item}}</text>
+    </view>
+  </view>
+
+  <view class="card info-card">
+    <view class="info-row" wx:if="{{job.location}}">
+      <text class="info-label">工作地点</text>
+      <text class="info-value">{{job.location}}</text>
+    </view>
+    <view class="info-row" wx:if="{{job.salary}}">
+      <text class="info-label">薪资待遇</text>
+      <text class="info-value salary">{{job.salary}}</text>
+    </view>
+    <view class="info-row" wx:if="{{job.education}}">
+      <text class="info-label">学历要求</text>
+      <text class="info-value">{{job.education}}</text>
+    </view>
+    <view class="info-row" wx:if="{{job.experience}}">
+      <text class="info-label">工作经验</text>
+      <text class="info-value">{{job.experience}}</text>
+    </view>
+    <view class="info-row" wx:if="{{job.deadlineText}}">
+      <text class="info-label">报名截止</text>
+      <text class="info-value deadline">{{job.deadlineText}}</text>
+    </view>
+    <view class="info-row" wx:if="{{job.publishDateText}}">
+      <text class="info-label">发布时间</text>
+      <text class="info-value">{{job.publishDateText}}</text>
+    </view>
+  </view>
+
+  <view class="card desc-card" wx:if="{{job.description}}">
+    <view class="section-title">职位描述</view>
+    <view class="desc-text">{{job.description}}</view>
+  </view>
+
+  <view class="card link-card" wx:if="{{job.link}}" bindtap="openLink">
+    <text class="link-text">点击复制原文链接，前往官网报名</text>
+  </view>
+
+  <view class="footer-bar">
+    <button class="btn-primary favorite-btn {{favorited ? 'favorited' : ''}}" bindtap="toggleFavorite">
+      {{favorited ? '已收藏' : '收藏职位'}}
+    </button>
+    <button class="btn-primary subscribe-btn" bindtap="goSearch">去搜索更多</button>
+  </view>
+</view>
+
+<view class="empty" wx:else>加载中...</view>

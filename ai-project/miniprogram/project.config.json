@@ -1,0 +1,14 @@
+{
+  "description": "央企国企公务员及大企业社招职位收集小程序",
+  "compileType": "miniprogram",
+  "appid": "touristappid",
+  "projectname": "job-collector",
+  "setting": {
+    "urlCheck": true,
+    "es6": true,
+    "enhance": true,
+    "postcss": true,
+    "minified": true
+  },
+  "libVersion": "3.0.0"
+}

@@ -1,0 +1,86 @@
+.page {
+  padding-bottom: 160rpx;
+}
+.head-card .job-title {
+  font-size: 36rpx;
+  font-weight: 600;
+  line-height: 1.4;
+}
+.head-card .job-company {
+  margin-top: 14rpx;
+  font-size: 28rpx;
+  color: #666;
+}
+.tags {
+  margin-top: 20rpx;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 18rpx 0;
+  border-bottom: 1rpx solid #f4f5f8;
+}
+.info-row:last-child {
+  border-bottom: none;
+}
+.info-label {
+  color: #8a8f99;
+  font-size: 26rpx;
+  flex-shrink: 0;
+}
+.info-value {
+  font-size: 26rpx;
+  color: #333;
+  text-align: right;
+  margin-left: 40rpx;
+}
+.salary {
+  color: #e26d3a;
+  font-weight: 600;
+}
+.deadline {
+  color: #e26d3a;
+}
+
+.section-title {
+  font-size: 30rpx;
+  font-weight: 600;
+  margin-bottom: 20rpx;
+}
+.desc-text {
+  font-size: 26rpx;
+  color: #555;
+  line-height: 1.8;
+  white-space: pre-wrap;
+}
+
+.link-card {
+  text-align: center;
+}
+.link-text {
+  color: #1d3a8f;
+  font-size: 26rpx;
+}
+
+/* 底部操作栏 */
+.footer-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  padding: 20rpx 24rpx calc(20rpx + env(safe-area-inset-bottom));
+  display: flex;
+  box-shadow: 0 -4rpx 16rpx rgba(0, 0, 0, 0.05);
+  z-index: 100;
+}
+.footer-bar button {
+  flex: 1;
+  margin: 0 10rpx;
+}
+.favorited {
+  background: #e8ecf7;
+  color: #1d3a8f;
+  border: 1rpx solid #1d3a8f;
+}

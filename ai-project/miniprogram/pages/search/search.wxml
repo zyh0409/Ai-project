@@ -1,0 +1,77 @@
+<view class="page">
+  <!-- 搜索框 -->
+  <view class="search-bar">
+    <input
+      class="search-input"
+      placeholder="搜索职位 / 公司 / 关键词"
+      value="{{keyword}}"
+      bindinput="onKeywordInput"
+      confirm-type="search"
+      bindconfirm="onSearch"
+    />
+    <view class="search-btn" bindtap="onSearch">搜索</view>
+  </view>
+
+  <!-- 筛选 -->
+  <view class="card filter-card">
+    <view class="filter-group">
+      <view class="filter-label">分类</view>
+      <view class="filter-options">
+        <view
+          wx:for="{{categories}}"
+          wx:key="key"
+          class="filter-chip {{category === item.key ? 'chip-active' : ''}}"
+          data-key="{{item.key}}"
+          bindtap="selectCategory"
+        >{{item.name}}</view>
+      </view>
+    </view>
+
+    <view class="filter-group">
+      <view class="filter-label">学历</view>
+      <view class="filter-options">
+        <view
+          wx:for="{{educations}}"
+          wx:key="*this"
+          class="filter-chip {{education === item ? 'chip-active' : ''}}"
+          data-value="{{item}}"
+          bindtap="selectEducation"
+        >{{item || '不限'}}</view>
+      </view>
+    </view>
+
+    <view class="filter-group">
+      <view class="filter-label">地区</view>
+      <view class="filter-options">
+        <view
+          wx:for="{{locations}}"
+          wx:key="*this"
+          class="filter-chip {{location === item ? 'chip-active' : ''}}"
+          data-value="{{item}}"
+          bindtap="selectLocation"
+        >{{item || '不限'}}</view>
+      </view>
+    </view>
+
+    <view class="filter-reset" bindtap="clearFilters">清空筛选</view>
+  </view>
+
+  <!-- 结果 -->
+  <view class="container">
+    <view class="result-count" wx:if="{{searched}}">共找到 {{results.length}} 条职位</view>
+    <view class="card job-card" wx:for="{{results}}" wx:key="id" data-id="{{item.id}}" bindtap="goDetail">
+      <view class="job-title">{{item.title}}</view>
+      <view class="job-company">{{item.company}}</view>
+      <view class="job-meta">
+        <text wx:if="{{item.location}}">{{item.location}}</text>
+        <text wx:if="{{item.salary}}">{{item.salary}}</text>
+        <text wx:if="{{item.education}}">{{item.education}}</text>
+      </view>
+      <view class="tags">
+        <text class="tag">{{item.categoryName}}</text>
+      </view>
+    </view>
+    <view class="empty" wx:if="{{searched && results.length === 0}}">没有找到匹配的职位</view>
+    <view class="empty" wx:if="{{!searched}}">输入关键词或选择筛选项，开始搜索</view>
+  </view>
+</view>

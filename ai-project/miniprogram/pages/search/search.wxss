@@ -1,0 +1,79 @@
+.search-bar {
+  display: flex;
+  align-items: center;
+  padding: 20rpx 24rpx;
+  background: #fff;
+}
+.search-input {
+  flex: 1;
+  height: 72rpx;
+  background: #f2f4f8;
+  border-radius: 40rpx;
+  padding: 0 32rpx;
+  font-size: 27rpx;
+}
+.search-btn {
+  margin-left: 20rpx;
+  color: #fff;
+  background: #1d3a8f;
+  padding: 14rpx 36rpx;
+  border-radius: 40rpx;
+  font-size: 27rpx;
+}
+
+.filter-card {
+  padding: 20rpx 28rpx 10rpx;
+}
+.filter-group {
+  margin-bottom: 20rpx;
+}
+.filter-label {
+  font-size: 24rpx;
+  color: #8a8f99;
+  margin-bottom: 14rpx;
+}
+.filter-options {
+  display: flex;
+  flex-wrap: wrap;
+}
+.filter-chip {
+  padding: 8rpx 24rpx;
+  font-size: 24rpx;
+  background: #f2f4f8;
+  color: #555;
+  border-radius: 30rpx;
+  margin: 0 14rpx 14rpx 0;
+}
+.chip-active {
+  background: #1d3a8f;
+  color: #fff;
+}
+.filter-reset {
+  text-align: right;
+  font-size: 24rpx;
+  color: #1d3a8f;
+  padding-bottom: 10rpx;
+}
+
+.result-count {
+  font-size: 24rpx;
+  color: #8a8f99;
+  margin-bottom: 16rpx;
+}
+.job-card .job-title {
+  font-size: 29rpx;
+  font-weight: 600;
+}
+.job-company {
+  margin-top: 10rpx;
+  font-size: 25rpx;
+  color: #666;
+}
+.job-meta {
+  margin-top: 14rpx;
+  font-size: 23rpx;
+  color: #555;
+}
+.job-meta text {
+  margin-right: 20rpx;
+}

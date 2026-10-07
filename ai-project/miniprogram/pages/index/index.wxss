@@ -1,0 +1,101 @@
+.page {
+  min-height: 100vh;
+}
+
+/* 顶部信息栏 */
+.banner {
+  background: linear-gradient(135deg, #1d3a8f 0%, #2f56c4 100%);
+  color: #fff;
+  padding: 40rpx 32rpx 90rpx;
+}
+.banner-title {
+  font-size: 40rpx;
+  font-weight: 600;
+}
+.banner-sub {
+  margin-top: 12rpx;
+  font-size: 24rpx;
+  opacity: 0.8;
+}
+
+/* 分类 Tab */
+.tabs {
+  display: flex;
+  background: #fff;
+  padding: 20rpx 24rpx;
+  margin-top: -60rpx;
+  border-radius: 20rpx 20rpx 0 0;
+  white-space: nowrap;
+  box-shadow: 0 -4rpx 16rpx rgba(0, 0, 0, 0.04);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.tab {
+  display: inline-block;
+  padding: 12rpx 28rpx;
+  margin-right: 16rpx;
+  font-size: 26rpx;
+  color: #555;
+  background: #f2f4f8;
+  border-radius: 30rpx;
+  flex-shrink: 0;
+}
+.tab-active {
+  background: #1d3a8f;
+  color: #fff;
+  font-weight: 500;
+}
+
+/* 职位卡片 */
+.job-card {
+  padding: 28rpx;
+}
+.job-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.job-title {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #1a1a2e;
+  flex: 1;
+  line-height: 1.4;
+}
+.job-category {
+  flex-shrink: 0;
+  margin-left: 16rpx;
+  font-size: 22rpx;
+  color: #1d3a8f;
+  background: rgba(29, 58, 143, 0.08);
+  padding: 6rpx 16rpx;
+  border-radius: 10rpx;
+}
+.job-company {
+  margin-top: 12rpx;
+  font-size: 26rpx;
+  color: #666;
+}
+.job-meta {
+  margin-top: 16rpx;
+  font-size: 24rpx;
+  color: #555;
+}
+.job-meta text {
+  margin-right: 24rpx;
+}
+.job-foot {
+  margin-top: 20rpx;
+  padding-top: 20rpx;
+  border-top: 1rpx solid #f0f1f5;
+  display: flex;
+  justify-content: space-between;
+  font-size: 22rpx;
+}
+.job-deadline {
+  color: #e26d3a;
+}
+.job-source {
+  color: #a0a6b3;
+}
